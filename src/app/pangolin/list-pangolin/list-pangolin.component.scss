@@ -1,0 +1,54 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+
+    padding: 1rem;
+    margin: 1.2rem;
+
+    cursor: pointer;
+}
+
+.list-img {
+    flex: 2;
+    padding-right: 1rem;
+}
+
+.img-role {
+    border-radius: 5rem;
+    width: 100%;
+}
+
+.list-info {
+    flex: 2;
+    padding-right: 1rem;
+}
+
+.list-name {
+    text-align: center;
+}
+
+.list-role {
+    text-align: center;
+}
+
+.list-score {
+    flex: 1;
+    padding-right: 0.2rem;
+}
+
+.score {
+text-align: center;
+}

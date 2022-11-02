@@ -1,0 +1,54 @@
+.container-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+}
+
+.container-logo {
+    padding-top: 0.5rem;
+}
+
+.footer-logo {
+    width: 75px;
+}
+
+.container-nav {
+    width: 50%;
+}
+
+.footer-nav {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+}
+
+a {
+    font-size: 1.2rem;
+}
+
+.social-link {
+    gap: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+    padding-bottom: 0.8rem;
+}
+
+
+span {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+.copy {
+    font-size: 0.5;
+}

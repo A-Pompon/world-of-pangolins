@@ -4,41 +4,47 @@
     font-family: "itim";
     src: url(./assets/fonts/Itim-Regular.ttf);
 }
-  
-$font-1: "itim", sans-serif;
 
 // VARIABLES TEMPLATES COLOR
 
-$color-1: rgba(241, 185, 134, 1);
+:root {
+    --font-1: "itim", sans-serif;
 
-$background-wood-1: rgba(111, 66, 26, 1);
-$background-wood-2: rgba(74, 38, 0, 1);
-$background-brick: rgb(0, 0, 0, 1);;
+    --color-1: rgba(241, 185, 134, 1);
+    --color-2: rgba(241, 186, 134, 0.3);
+    --color-3: rgb(159, 103, 51);
 
-$color-button-1: rgba(241, 185, 134, 1);
-$color-button-1-hover: rgb(255, 255, 255);
-$background-button-1: rgba(144, 103, 58, 0.35);
-$background-button-1-hover: rgba(144, 103, 58, 0.35);
-$border-button-1: rgba(241, 185, 134, 1);
-$border-button-1-hover: rgb(255, 255, 255);
+    --background-wood-1: rgba(111, 66, 26, 1);
+    --background-wood-2: rgba(51, 26, 0, 1);
+    --background-wood-2-horizontal: rgb(51, 26, 0, 1);
+    --background-brick: rgb(0, 0, 0, 1);
 
-$color-button-2: rgba(28, 14, 0, 1);
-$color-button-2-hover: rgb(255, 255, 255);
-$background-button-2: rgba(241, 186, 134, 0.8);
-$background-button-2-hover: rgba(241, 186, 134, 0.7);
-$border-button-2: rgba(156, 80, 0, 1);
-$border-button-2-hover: rgb(255, 255, 255);
+    --color-button-1: rgba(241, 185, 134, 1);
+    --color-button-1-hover: rgb(255, 255, 255);
+    --background-button-1: rgba(144, 103, 58, 0.35);
+    --background-button-1-hover: rgba(144, 103, 58, 0.35);
+    --border-button-1: rgba(241, 185, 134, 1);
+    --border-button-1-hover: rgb(255, 255, 255);
 
-$white: rgb(255, 255, 255, 1);
-$black:rgb(0, 0, 0, 1);
+    --color-button-2: rgba(28, 14, 0, 1);
+    --color-button-2-hover: rgb(255, 255, 255);
+    --background-button-2: rgba(241, 186, 134, 0.8);
+    --background-button-2-hover: rgba(241, 186, 134, 0.7);
+    --border-button-2: rgba(156, 80, 0, 1);
+    --border-button-2-hover: rgb(255, 255, 255);
 
-$transition-in: all 300ms ease-in;
-$transition-out: all 400ms ease-out;
-$transition-out-long: all 1000ms ease-out;
+    --white: rgb(255, 255, 255, 1);
+    --black:rgb(0, 0, 0, 1);
+    --black-2:rgba(0, 0, 0, 0.5);
 
-$container-width-lg: 75%;
-$container-width-md: 86%;
-$container-width-sm: 90%;
+    --transition-in: all 300ms ease-in;
+    --transition-out: all 400ms ease-out;
+    --transition-out-long: all 1000ms ease-out;
+
+    --container-width-lg: 75%;
+    --container-width-md: 86%;
+    --container-width-sm: 90%;
+}
 
 // CSS SETTINGS
 
@@ -57,16 +63,26 @@ html {
 }
 
 body {
-    font-family: $font-1;
-    color: $color-1;
-    line-height: 1;
+    font-family: var(--font-1);
+    color: var(--color-1);
+    line-height: 1.5;
     background-image: url(./assets/textures/brick.png);
-    background-color: $black;
+    background-color: var(--black);
 }
 
 .container {
-    width: $container-width-lg;
+    width: var(--container-width-lg);
     margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.title {
+    width: fit-content;
+    text-align: center;
+    background-image: url(../src/assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+    padding: 0.8rem 3rem 0.2rem 3rem;
 }
 
 h1,
@@ -74,118 +90,131 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   font-weight: 500;
+  color: var(--color-1);
 }
 
 h1 {
   font-size: 2.5rem;
+  text-align: center;
+}
+
+p {
+    font-size: 1.4rem;
 }
 
 a {
-    color: $color-1;
-    transition: $transition-in;
+    color: var(--color-1);
+    transition: var(--transition-in);
+    font-size: 1.8rem;
 }
   
 a:hover {
-    color: $white;
+    color: var(--white);
+    text-decoration: underline var(--white);
 }
 
 a:active {
-    color: $color-1;
-    text-decoration: underline;
-}
-
-.btn-game {
-    background-color: $background-button-1;
-    color: $color-button-1;
-    border: 3px solid $border-button-1;
-    width: max-content;
-    font-family: $font-1;
-    font-size: 1.5rem;
-    font-weight: 500;
-    padding: 1rem 1.6rem;
-    border-radius: 0.4rem;
-    cursor: pointer;
-    transition: $transition-in;
-}
-
-.btn-game:hover {
-    background-color: $background-button-1-hover;
-    color: $color-button-1-hover;
-    border: 3px solid $border-button-1-hover;
-}
-
-.btn-game:active {
-    background-color: $background-button-1;
-    color: $color-button-1;
-    border: 3px solid $border-button-1;
-    transition: none; 
+    color: var(--color-1);
+    text-decoration: underline var(--color-1);
+    transition: none;
 }
 
 .btn {
     width: max-content;
-    font-family: $font-1;
+    font-family: var(--font-1);
     font-size: 1.1rem;
     font-weight: 500;
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
     cursor: pointer;
-    transition: $transition-in;
+    transition: var(--transition-in);
 }
 
 .primary {
-    background-color: $background-button-1;
-    color: $color-button-1;
-    border: 3px solid $border-button-1;
+    background-color: var(--background-button-1);
+    color: var(--color-button-1);
+    border: 3px solid var(--border-button-1);
 }
 
 .secondary {
-    background-color: $background-button-2;
-    color: $color-button-2;
-    border: 3px solid $border-button-2;
+    background-color: var(--background-button-2);
+    color: var(--color-button-2);
+    border: 3px solid var(--border-button-2);
 }
 
 .primary:hover {
-    background-color: $background-button-1-hover;
-    color: $color-button-1-hover;
-    border: 3px solid $border-button-1-hover;
+    background-color: var(--background-button-1-hover);
+    color: var(--color-button-1-hover);
+    border: 3px solid var(--border-button-1-hover);
 }
 
 .secondary:hover {
-    background-color: $background-button-2-hover;
-    color: $color-button-2-hover;
-    border: 3px solid $border-button-2-hover;
+    background-color: var(--background-button-2-hover);
+    color: var(--color-button-2-hover);
+    border: 3px solid var(--border-button-2-hover);
 }
 
 .primary:active {
-    background-color: $background-button-1;
-    color: $color-button-1;
-    border: 3px solid $border-button-1;
+    background-color: var(--background-button-1);
+    color: var(--color-button-1);
+    border: 3px solid var(--border-button-1);
     transition: none;
 }
 
 .secondary:active {
-    background-color: $background-button-2;
-    color: $color-button-2;
-    border: 3px solid $border-button-2;
+    background-color: var(--background-button-2);
+    color: var(--color-button-2);
+    border: 3px solid var(--border-button-2);
     transition: none;
 }
 
 /* ===== MEDIA QUERIES (MEDIUM DEVICES) ===== */
 
-// @media screen and (max-width: 1024px) {
-    
-// }
+@media screen and (max-width: 1024px) {
+    .container {
+        width: var(--container-width-lg);
+    }
+
+    h1 {
+        font-size: 2.3rem;
+      }
+      
+      p {
+          font-size: 1.2rem;
+      }
+}
   
   /* ===== MEDIA QUERIES (SMALL DEVICES) ===== */
   
-// @media screen and (max-width: 600px) {
-    
-// }
+@media screen and (max-width: 600px) {
+    .container {
+        width: var(--container-width-md);
+    }
+
+    h1 {
+        font-size: 1.7rem;
+      }
+      
+      p {
+          font-size: 1rem;
+      }
+}
   
 /* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
   
-// @media screen and (max-width: 378px) {
-    
-// }
+@media screen and (max-width: 378px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    h1 {
+        font-size: 1.3rem;
+      }
+      
+      p {
+          font-size: 0.8rem;
+      }
+}

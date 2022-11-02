@@ -1,0 +1,60 @@
+<div class="level-donjon" *ngIf='dataDonjon.level'>
+    <h2>Choix du Donjon :</h2>
+
+    <div class="levels">
+        <div class="level-container">
+            <div class="doors">
+                <div class="door" appOpenDoor>
+                    <div class="handle"></div>
+                </div>
+                <div class="back-door">
+                    <h2 class="level-para-back-door">
+                        Règle :
+                    </h2>
+                    <p class="level-para-back-door">
+                        L'adversaire à 3 PVs.
+                    </p>
+                    <button class="btn primary play" (click)="sendEvent1(); displayGameBoardChild()">Jouer</button>
+                    <img src="../../assets/donjon/soldat-fourmi-t.png" alt="Adversaire image" class="level-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="level-container">
+            <div class="doors">
+                <div class="door" appOpenDoor>
+                    <div class="handle"></div>
+                </div>
+                <div class="back-door">
+                    <h2 class="level-para-back-door">
+                        Règle :
+                    </h2>
+                    <p class="level-para-back-door">
+                        L'adversaire à 5 PVs.
+                    </p>
+                    <button class="btn primary play" (click)="sendEvent2(); displayGameBoardChild()">Jouer</button>
+                    <img src="../../assets/donjon/colonel-fourmi-t.png" alt="Adversaire image" class="level-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="level-container">
+            <div class="doors">
+                <div class="door" appOpenDoor>
+                    <div class="handle"></div>
+                </div>
+                <div class="back-door">
+                    <h2 class="level-para-back-door">
+                        Règle :
+                    </h2>
+                    <p class="level-para-back-door">
+                        L'adversaire à 7 PVs.
+                    </p>
+                    <button class="btn primary play" (click)="sendEvent3(); displayGameBoardChild()">Jouer</button>
+                    <img src="../../assets/donjon/roi-fourmi-t.png" alt="Adversaire image" class="level-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="btn primary" routerLink='/'>Accueil</button> -->
+</div>

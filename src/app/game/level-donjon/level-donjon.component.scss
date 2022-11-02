@@ -1,0 +1,93 @@
+.level-text {
+    text-align: center;
+    padding: 1rem;
+}
+
+.level-donjon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.levels {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+
+.level-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2.5rem 2rem 2.5rem;
+}
+
+.doors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-door {
+    // background-color: var(--color-2);
+    background: linear-gradient(180deg, #000 40%, #F1B986 100%);
+    width:200px;
+    height:400px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5rem 5rem 0 0 ;
+    
+    margin-top:2rem;
+
+    cursor: default;
+}
+
+.level-img {
+    width: 75%;
+    padding-top: 2rem;
+}
+
+.door {
+    background-image: url(../../../assets/textures/wood-2.png);
+    background-color: var(--background-wood-2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:200px;
+    height:400px;
+
+    border-radius: 5rem 5rem 0 0 ;
+
+    margin-top:2rem;
+
+    box-shadow: 0.5rem 0.5rem 0.5rem  var(--black);
+    
+    transform-origin: left;
+    /*Speed of the door animation*/
+    transition: all 0.5s ease-in-out;
+}
+
+.handle {
+    content: "";
+    position: absolute;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: var(--color-1);
+    border: solid 0.2rem var(--color-2);
+    border-radius: 2rem;
+    right: 1.2rem;
+    box-shadow: 0.4rem 0.4rem 0.2rem var(--black);
+}

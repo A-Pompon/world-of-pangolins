@@ -1,0 +1,29 @@
+.end-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 1rem;
+}
+
+.show-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+
+    padding: 2rem;
+}
+
+.win-or-loose{
+    width: 75%;
+    text-align: center;
+}
+
+.reset {
+    margin: 1rem;
+}

@@ -1,0 +1,68 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+
+    padding: 1rem;
+    margin: 1.2rem;
+}
+
+.detail-img {
+    padding: 0.5rem;
+}
+
+.img-role {
+    width: 100%;
+    border-radius: 5rem;
+}
+
+.detail-info {
+    text-align: center;
+    padding-top: 1.5rem;
+}
+
+// .detail-name {
+    
+// }
+
+// .detail-role {
+    
+// }
+
+.detail-score {
+    text-align: center;
+}
+
+.score {
+    font-size: 1.6rem;
+}
+
+// .ratio {
+    
+// }
+
+.detail-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.btn {
+    margin: 1rem;
+}
+
+.no-data {
+    text-align: center;
+}

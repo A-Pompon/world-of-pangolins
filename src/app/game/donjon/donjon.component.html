@@ -1,0 +1,104 @@
+<section class="container">
+    <div class="donjon-container">
+        <header class="title">
+            <h1>
+                Donjon
+            </h1>
+        </header>
+    
+        <div>
+            <app-level-donjon (sendLevelOneToData)="scoreToEnd1()" (sendLevelTwoToData)="scoreToEnd2()" (sendLevelThreeToData)="scoreToEnd3()" (sendDisplayToData)="displayGameBoard()"></app-level-donjon>
+        </div>
+
+        <div *ngIf='gameBoard' class="game-board-container">
+            <p class="score-reach">Nombre de PVs de l'adversaire : {{scoreToReach}}</p>
+            <div class="opponent-card">
+                <div class="opponent-img">
+                    <img class="img-card" [src]="'../../../assets/donjon/'+opponentImg+'.png'" alt="Image rôle">
+                </div>
+                <div class="opponent-info">
+                    <h1 class="opponent-name">
+                        {{ opponent }}
+                    </h1>
+                    <p class="opponent-pv">
+                        PVs : {{scoreIa}}
+                    </p>
+                </div>
+            </div>
+            <div class="fight-card">
+            <!-- A LA DERSTRUCTION DU COMPONENT REINITIALISER LE JEU
+                SI QULQUUN QUITTE LE JEU EN PLEINE PARTIE -->
+                <div *ngIf="!imgPlayer" class="pre-fight">
+                    <h1 class="fight-img">
+                        {{ opponent }}
+                    </h1>
+                    <p class="fight-para">
+                        VS
+                    </p>
+                    <h1 class="fight-img"> 
+                        <!-- CHANGER PAR PLAYER !!!!!!!!!!!!!!!!!!!!! -->
+                        {{ opponent }}
+                    </h1>
+                </div>
+
+                <div *ngIf="imgPlayer" class="fight">
+                    <div class="fight-img">
+                        <img class="img-fight" [src]='"../../../assets/signes/"+imgOpponent+".png"' [alt]='"Image " + imgOpponent'>
+                    </div>
+                    <p class="fight-para">
+                        VS
+                    </p>
+                    <div class="fight-img">
+                        <img class="img-fight" [src]='"../../../assets/signes/"+imgPlayer+".png"' [alt]='"Image " + imgPlayer'>
+                    </div>
+                </div>
+
+                <div *ngIf="imgPlayer" class="resultat">
+                    <h1 class="affichage">
+                        {{resultat}}
+                    </h1>
+                </div>
+        
+                <!-- <p>PLAYER : {{scorePlayer}} | {{scoreIa}} : BOT </p> -->
+            </div>
+            <div class="profil-card">
+                <div class="profil-info">
+                    <h1 class="profil-name">
+                        <!-- CHANGER PAR PLAYER !!!!!!!!!!!!!!!!!!!!! -->
+                        {{ opponent }}
+                    </h1>
+                    <!-- <p class="profil-role">
+                        Rôle :
+                    </p> -->
+                    <p class="profil-pv">
+                        PVs : {{scorePlayer}}
+                    </p>
+                </div>
+                <div class="profil-img">
+                    <!-- CHANGER PAR PLAYER !!!!!!!!!!!!!!!!!!!!! -->
+                    <img class="img-card" [src]="'../../../assets/donjon/'+opponentImg+'.png'" alt="Image rôle">
+                </div>
+            </div>
+            <div class="choice-card">
+                <a class="choice-image" (click)="stoneCase()">
+                    <img class="img-choice" src="../../../assets/signes/lance.png" alt="Image lance" commonBorderCard='red'>
+                </a>
+                <a class="choice-image" (click)="paperCase()">
+                    <img class="img-choice" src="../../../assets/signes/arc.png" alt="Image arc" commonBorderCard='red'>
+                </a>
+                <a class="choice-image" (click)="scissorsCase()">
+                    <img class="img-choice" src="../../../assets/signes/bouclier.png" alt="Image bouclier" commonBorderCard='red'>
+                </a>
+            </div>
+        </div>
+        <div *ngIf='bug && !gameBoard' class="no-game-board-container">
+            <p>
+                Oups, quelque chose c'est mal passé...
+            </p>
+        </div>
+    
+        <div>
+            <app-end-donjon (sendResetToData)="resetStats()" [winOrLoos]="winLoos" [scoreIaFinal]='scoreIa' [scorePlayerFinal]='scorePlayer' ></app-end-donjon>
+        </div>  
+    </div>
+</section>

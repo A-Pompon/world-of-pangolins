@@ -1,0 +1,52 @@
+<section class="container">
+    <div class="profil-container">
+        <header class="title">
+            <h1>
+                Profil
+            </h1>
+        </header>
+        <div class="profil">
+            <div class="profil-card" *ngIf="pangolin">
+                <div class="img-info">
+                    <div class="profil-img" >
+                        <img class="img-role" [src]="'../../../assets/roles/'+pangolin.role+'.png'" alt="Image rôle">
+                    </div>
+                    <div class="profil-info">
+                        <div class="profil-row">
+                            <p class="profil-name">
+                                Nom : {{ pangolin.name }}
+                            </p>
+                            <button class="btn primary">Modifier</button>
+                        </div>
+                        <div class="profil-row">
+                            <p class="profil-role">
+                                Rôle : {{ pangolin.role | uppercase}}
+                            </p>
+                            <button class="btn primary">Modifier</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="profil-score">
+                    <div class="info-score">
+                        <p class="victory">
+                            Victoire : {{ pangolin.victory }}
+                        </p>
+                        <p class="loose">
+                            Défaite : {{ pangolin.loose }}
+                        </p>
+                        <p class="ratio">
+                            Ratio : {{ pangolin.victory/pangolin.loose | number:'1.0-2' }}
+                        </p>
+                    </div>
+                    <p class="score">
+                        Score : {{ pangolin.score }}
+                    </p>
+                </div>
+                <div class="profil-action">
+                    <button class="btn-game" (click)="goGame()">Jouer</button>
+                    <button class="btn secondary" (click)="logout()">Déconnexion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

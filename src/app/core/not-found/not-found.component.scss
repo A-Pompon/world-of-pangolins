@@ -1,0 +1,83 @@
+.not-found-text {
+    // width:fit-content;
+    // background-image: url(../../assets/textures/wood-2.png);
+    // background-color: var(--background-wood-2-horizontal);
+    text-align: center;
+    padding: 1rem;
+}
+
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.doors {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.back-door {
+    background-color: var(--black-2);
+    width:200px;
+    height:300px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 5rem 5rem 0 0 ;
+    
+    margin-top:2rem;
+
+    cursor: default;
+}
+
+.not-found-img {
+    width: 75%;
+}
+
+.door {
+    background-image: url(../../../assets/textures/wood-2.png);
+    background-color: var(--background-wood-2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:200px;
+    height:300px;
+
+    border-radius: 5rem 5rem 0 0 ;
+
+    margin-top:2rem;
+
+    box-shadow: 0.5rem 0.5rem 0.5rem  var(--black);
+    
+    transform-origin: left;
+    /*Speed of the door animation*/
+    transition: all 0.5s ease-in-out;
+}
+
+.handle {
+    content: "";
+    position: absolute;
+    width: 1.1rem;
+    height: 1.1rem;
+    background-color: var(--color-1);
+    border: solid 0.2rem var(--color-2);
+    border-radius: 2rem;
+    right: 1.2rem;
+    box-shadow: 0.4rem 0.4rem 0.2rem var(--black);
+}
+
+// .door:hover {
+//     box-shadow: none;
+//     /*prespectiv creates the door open effect*/
+//     transform: perspective(1200px) translateZ(0px) translateX(0px) translateY(0px) rotateY(-105deg);
+// }

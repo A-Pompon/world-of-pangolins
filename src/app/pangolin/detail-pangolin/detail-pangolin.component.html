@@ -1,0 +1,31 @@
+<section class="container">
+    <div class="detail">
+        <div class="detail-container" *ngIf="pangolin">
+            <div class="detail-img" >
+                <img class="img-role" [src]="'../../../assets/roles/'+pangolin.role+'.png'" alt="Image rôle">
+            </div>
+            <div class="detail-info">
+                <p class="detail-name">
+                    Nom : {{ pangolin.name }}
+                </p>
+                <p class="detail-role">
+                    Rôle : {{ pangolin.role | uppercase}}
+                </p>
+            </div>
+            <div class="detail-score">
+                <p class="score">
+                    Score : {{ pangolin.score }}
+                </p>
+                <p class="ratio">
+                    Ratio : {{ pangolin.victory/pangolin.loose | number:'1.0-2' }}
+                </p>
+            </div>
+            <div class="detail-action">
+                <button class="btn primary" (click)="goToPangolinList()">Retour</button>
+                <button *ngIf="pangolin.friend" class="btn secondary">Ajouter aux amis</button>
+            </div>
+        </div>
+    </div>
+    
+    <h2 *ngIf='!pangolin' class="no-data">Aucun pangolin à afficher !</h2>
+</section>

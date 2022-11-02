@@ -1,0 +1,49 @@
+.accueil {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+}
+
+.accueil-titre {
+    padding: 1rem;
+}
+
+.accueil-description {
+    padding: 0rem 5rem 1.5rem 5rem;
+}
+
+.para {
+    text-align: justify;
+}
+
+.btn-game {
+    background-color: var(--background-button-1);
+    color: var(--color-button-1);
+    border: 3px solid var(--border-button-1);
+    width: max-content;
+    font-family: var(--font-1);
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1rem 1.6rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: var(--transition-in);
+}
+
+.btn-game:hover {
+    background-color: var(--background-button-1-hover);
+    color: var(--color-button-1-hover);
+    border: 3px solid var(--border-button-1-hover);
+}
+
+.btn-game:active {
+    background-color: var(--background-button-1);
+    color: var(--color-button-1);
+    border: 3px solid var(--border-button-1);
+    transition: none; 
+}

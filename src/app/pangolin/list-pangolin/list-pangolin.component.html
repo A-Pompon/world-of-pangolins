@@ -1,0 +1,20 @@
+<div class="list">
+    <div *ngFor='let pangolin of pangolinList' class="list-item" (click)="goToPangolin(pangolin)" commonBorderCard='var(--color-1)'>
+        <div class="list-img" >
+            <img class="img-role" [src]="'../../../assets/roles/'+pangolin.role+'.png'" alt="Image rôle">
+        </div>
+        <div class="list-info">
+            <p class="list-name">
+                Nom : {{ pangolin.name }}
+            </p>
+            <p class="list-role">
+                Rôle : {{ pangolin.role | uppercase}}
+            </p>
+        </div>
+        <div class="list-score">
+            <p class="score">
+                Score : {{ pangolin.score }}
+            </p>
+        </div>
+    </div>
+</div>

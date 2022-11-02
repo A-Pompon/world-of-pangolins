@@ -1,0 +1,153 @@
+.donjon-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-board-container {
+    width: 80%;
+    text-align: center;
+}
+
+.opponent-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    padding-top: 0.5rem;
+}
+
+.opponent-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.img-card {
+    width: 85%;
+}
+
+.opponent-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+}
+
+// .opponent-name {
+//     flex: 1;
+// }
+
+// .opponent-pv {
+//     flex: 1;
+// }
+
+.fight-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    border: solid 3px rgb(0, 0, 255);
+}
+
+.pre-fight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    flex: 1;
+
+    border: solid 3px rgb(13, 255, 0);
+}
+
+.fight-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: solid 3px red;
+}
+
+.img-fight {
+    width: 25%;
+}
+
+.resultat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profil-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+
+    padding-top: 1.5rem;
+}
+
+.profil-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.profil-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+}
+
+.choice-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 1.5rem;
+}
+
+.choice-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-choice {
+    width: 75%;
+    border-radius: 10rem;
+}
+
+.img-choice:active {
+    border: solid white 3px;
+}
+
+.no-game-board-container {
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
