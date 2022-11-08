@@ -25,6 +25,7 @@
     --background-button-1-hover: rgba(144, 103, 58, 0.35);
     --border-button-1: rgba(241, 185, 134, 1);
     --border-button-1-hover: rgb(255, 255, 255);
+    --border-button-1-active: rgb(255, 102, 0);
 
     --color-button-2: rgba(28, 14, 0, 1);
     --color-button-2-hover: rgb(255, 255, 255);
@@ -32,6 +33,7 @@
     --background-button-2-hover: rgba(241, 186, 134, 0.7);
     --border-button-2: rgba(156, 80, 0, 1);
     --border-button-2-hover: rgb(255, 255, 255);
+    --border-button-2-active: rgb(255, 102, 0);
 
     --white: rgb(255, 255, 255, 1);
     --black:rgb(0, 0, 0, 1);
@@ -43,7 +45,7 @@
 
     --container-width-lg: 75%;
     --container-width-md: 86%;
-    --container-width-sm: 90%;
+    --container-width-sm: 92%;
 }
 
 // CSS SETTINGS
@@ -99,6 +101,10 @@ p {
 h1 {
   font-size: 2.5rem;
   text-align: center;
+}
+
+h4 {
+    font-size: 2.5rem;
 }
 
 p {
@@ -159,21 +165,21 @@ a:active {
 
 .primary:active {
     background-color: var(--background-button-1);
-    color: var(--color-button-1);
-    border: 3px solid var(--border-button-1);
+    color: var(--border-button-1-active);
+    border: 3px solid var(--border-button-1-active);
     transition: none;
 }
 
 .secondary:active {
     background-color: var(--background-button-2);
-    color: var(--color-button-2);
-    border: 3px solid var(--border-button-2);
+    color: var(--border-button-2-active);
+    border: 3px solid var(--border-button-2-active);
     transition: none;
 }
 
-/* ===== MEDIA QUERIES (MEDIUM DEVICES) ===== */
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1023px) {
     .container {
         width: var(--container-width-lg);
     }
@@ -181,15 +187,23 @@ a:active {
     h1 {
         font-size: 2.3rem;
       }
+
+    h4 {
+        font-size: 2rem;
+    }
       
-      p {
+    p {
           font-size: 1.2rem;
-      }
+    }
+
+    a {
+        font-size: 1.6rem;
+    }
 }
   
-  /* ===== MEDIA QUERIES (SMALL DEVICES) ===== */
-  
-@media screen and (max-width: 600px) {
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .container {
         width: var(--container-width-md);
     }
@@ -197,15 +211,23 @@ a:active {
     h1 {
         font-size: 1.7rem;
       }
+
+    h4 {
+        font-size: 1.5rem;
+    }
       
-      p {
+    p {
           font-size: 1rem;
-      }
+    }
+
+    a {
+        font-size: 1.4rem;
+    }
 }
   
-/* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+/* ===== MEDIA QUERIES (MOBILE) ===== */
   
-@media screen and (max-width: 378px) {
+@media screen and (min-width: 320px) and (max-width: 480px) {
     .container {
         width: var(--container-width-sm);
     }
@@ -213,8 +235,16 @@ a:active {
     h1 {
         font-size: 1.3rem;
       }
+
+    h4 {
+        font-size: 1.1rem;
+    }
       
       p {
-          font-size: 0.8rem;
+          font-size: 0.9rem;
       }
+
+      a {
+        font-size: 1.2rem;
+    }
 }

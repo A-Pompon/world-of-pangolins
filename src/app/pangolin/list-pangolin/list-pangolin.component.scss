@@ -52,3 +52,63 @@
 .score {
 text-align: center;
 }
+
+/* ===== MEDIA QUERIES (DESKTOP) ===== */
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .list-item {
+        width: 60%;
+    }
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .list-item {
+        width: 75%;
+    }
+}
+
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .list-item {
+        width: 80%;
+    }
+
+    .list-img {
+        padding-right: 0.6rem;
+    }
+
+    .list-info {
+        padding-right: 0.6rem;
+    }
+
+    .list-score {
+        padding-right: none;
+    }
+}
+
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+  
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .list-item {
+        width: 92%;
+    }
+
+    .list-img {
+        padding-right: 0.6rem;
+    }
+
+    .list-info {
+        padding-right: 0.6rem;
+    }
+
+    .list-score {
+        padding-right: none;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}

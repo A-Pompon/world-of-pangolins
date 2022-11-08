@@ -43,7 +43,35 @@
 
 .btn-game:active {
     background-color: var(--background-button-1);
-    color: var(--color-button-1);
-    border: 3px solid var(--border-button-1);
+    color: var(--border-button-1-active);
+    border: 3px solid var(--border-button-1-active);
     transition: none; 
+}
+
+/* ===== MEDIA QUERIES (DESKTOP) ===== */
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    
+}
+
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .accueil-description {
+        padding: 0rem 3.5rem 1.1rem 3.5rem;
+    }
+}
+
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+  
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .accueil-description {
+        padding: 0rem 2.5rem 1.1rem 2.5rem;
+    }
 }

@@ -6,7 +6,7 @@
 }
 
 .detail-container {
-    width: 75%;
+    width: 100%;
     display: flex;
     flex-direction: column;
 
@@ -31,9 +31,9 @@
     padding-top: 1.5rem;
 }
 
-// .detail-name {
-    
-// }
+.detail-name {
+    font-size: 1.6rem;
+}
 
 // .detail-role {
     
@@ -64,5 +64,33 @@
 }
 
 .no-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    min-height: 45vh;
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    
+  
+}
+  
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    
+}
+  
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+  
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .detail-action {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

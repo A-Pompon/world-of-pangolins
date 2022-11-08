@@ -13,10 +13,9 @@
 .levels {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    padding-bottom: 2rem;
 }
 
 .level-container {
@@ -24,7 +23,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem 2.5rem 2rem 2.5rem;
+    padding: 2rem 2.5rem;
 }
 
 .doors {
@@ -90,4 +89,36 @@
     border-radius: 2rem;
     right: 1.2rem;
     box-shadow: 0.4rem 0.4rem 0.2rem var(--black);
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    
+  
+}
+  
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .levels {
+        padding-bottom: 1rem;
+    }
+}
+  
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+  
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .levels {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+
+    .level-container {
+        padding: 1rem 1.2rem;
+    }
 }

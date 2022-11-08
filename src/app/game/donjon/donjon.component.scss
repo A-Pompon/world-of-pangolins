@@ -1,8 +1,8 @@
 .donjon-container {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .game-board-container {
@@ -26,7 +26,7 @@
 }
 
 .img-card {
-    width: 85%;
+    width: 65%;
 }
 
 .opponent-info {
@@ -53,8 +53,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    border: solid 3px rgb(0, 0, 255);
+    padding-top: 1.5rem;
 }
 
 .pre-fight {
@@ -66,13 +65,10 @@
 
 .fight {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
-    flex: 1;
-
-    border: solid 3px rgb(13, 255, 0);
+    flex: 2;
 }
 
 .fight-img {
@@ -80,12 +76,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
 
-    border: solid 3px red;
+.fight-para {
+    width: min-content;
+    height: min-content;
 }
 
 .img-fight {
-    width: 25%;
+    width: 60%;
 }
 
 .resultat {
@@ -122,6 +121,17 @@
     background-color: var(--background-wood-1);
 }
 
+.progress-bar {
+    width: 98%;
+    height: 1rem;
+    background-color: #222;
+  }
+
+.progress-bar-fill {
+    background-color: #5F5;
+    height: 100%; /* This is important */
+}
+
 .choice-card {
     display: flex;
     flex-direction: row;
@@ -130,18 +140,28 @@
 }
 
 .choice-image {
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 10rem;
+    cursor: pointer;
+    transition: var(--transition-in);
+    background-color: transparent;
 }
 
 .img-choice {
-    width: 75%;
+    width: 50%;
     border-radius: 10rem;
 }
 
+.img-choice:hover {
+    border: 3px solid var(--border-button-2-hover);
+}
+
 .img-choice:active {
-    border: solid white 3px;
+    border: 3px solid var(--border-button-1-active);
+    transition: none;
 }
 
 .no-game-board-container {
@@ -150,4 +170,75 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* ===== MEDIA QUERIES (DESKTOP) ===== */
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .no-game-board-container {
+        min-height: 40vh;
+    }
+
+    .img-card {
+        width: 85%;
+    }
+
+    .img-fight {
+        width: 60%;
+    }
+
+    .img-choice {
+        width: 80%;
+        border-radius: 10rem;
+    }
+}
+
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .fight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img-card {
+        width: 85%;
+    }
+
+    .img-fight {
+        width: 40%;
+    }
+
+    .img-choice {
+        width: 80%;
+        border-radius: 10rem;
+    }
+}
+
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+  
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .fight {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .img-card {
+        width: 95%;
+    }
+
+    .img-choice {
+        width: 90%;
+        border-radius: 10rem;
+    }
 }
