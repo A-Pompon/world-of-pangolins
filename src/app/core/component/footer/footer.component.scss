@@ -52,3 +52,17 @@ span {
 .copy {
     font-size: 0.5;
 }
+
+@media screen and (max-width: 600px) {
+    .container-footer {
+        padding-bottom: 3rem;
+    }
+
+    .container-nav {
+        display: none;
+    }
+
+    .footer-logo {
+        width: 50px;
+    }
+}

@@ -8,11 +8,12 @@ import { EndDonjonComponent } from './end-donjon/end-donjon.component';
 import { DonjonService } from './donjon.service';
 
 import { CommonDirectivesModule } from '../common-directives/common-directives.module';
+import { AuthGuard } from '../core/guards/auth-guard';
 
 const gameRoutes: Routes = [
-  { path: 'donjon', component: DonjonComponent},
-  { path: 'level-donjon', component: LevelDonjonComponent},
-  { path: 'end-donjon', component: EndDonjonComponent},
+  { path: 'donjon', component: DonjonComponent, canActivate: [AuthGuard]},
+  { path: 'level-donjon', component: LevelDonjonComponent, canActivate: [AuthGuard]},
+  { path: 'end-donjon', component: EndDonjonComponent, canActivate: [AuthGuard]},
 ];
 
 @NgModule({

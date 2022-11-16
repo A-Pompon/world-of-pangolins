@@ -35,6 +35,8 @@
     --border-button-2-hover: rgb(255, 255, 255);
     --border-button-2-active: rgb(255, 102, 0);
 
+    --link-active: rgb(255, 102, 0);
+
     --white: rgb(255, 255, 255, 1);
     --black:rgb(0, 0, 0, 1);
     --black-2:rgba(0, 0, 0, 0.5);
@@ -123,8 +125,8 @@ a:hover {
 }
 
 a:active {
-    color: var(--color-1);
-    text-decoration: underline var(--color-1);
+    color: var(--link-active);
+    text-decoration: underline var(--link-active);
     transition: none;
 }
 

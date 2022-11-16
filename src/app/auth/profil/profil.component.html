@@ -6,40 +6,40 @@
             </h1>
         </header>
         <div class="profil">
-            <div class="profil-card" *ngIf="pangolin">
+            <div class="profil-card" *ngIf="profil">
                 <div class="img-info">
                     <div class="profil-img" >
-                        <img class="img-role" [src]="'../../../assets/roles/'+pangolin.role+'.png'" alt="Image rôle">
+                        <img class="img-role" [src]="getImage(profil)" alt="Image rôle">
                     </div>
                     <div class="profil-info">
                         <div class="profil-row">
                             <p class="profil-name">
-                                Nom : {{ pangolin.name }}
+                                Nom : {{ profil.pangolin_id.name }}
                             </p>
-                            <button class="btn primary">Modifier</button>
+                            <button (click)="goUpdate()" class="btn primary">Modifier</button>
                         </div>
                         <div class="profil-row">
                             <p class="profil-role">
-                                Rôle : {{ pangolin.role | uppercase}}
+                                Rôle : {{ profil.pangolin_id.role | uppercase}}
                             </p>
-                            <button class="btn primary">Modifier</button>
+                            <button (click)="goUpdate()" class="btn primary">Modifier</button>
                         </div>
                     </div>
                 </div>
                 <div class="profil-score">
                     <div class="info-score">
                         <p class="victory">
-                            Victoire : {{ pangolin.victory }}
+                            Victoire : {{ profil.victories }}
                         </p>
                         <p class="loose">
-                            Défaite : {{ pangolin.loose }}
+                            Défaite : {{ profil.defeates }}
                         </p>
                         <p class="ratio">
-                            Ratio : {{ pangolin.victory/pangolin.loose | number:'1.0-2' }}
+                            Ratio : {{ profil.victories/profil.defeates | number:'1.0-2' }}
                         </p>
                     </div>
                     <p class="score">
-                        Score : {{ pangolin.score }}
+                        Score : {{ profil.points }}
                     </p>
                 </div>
                 <div class="profil-action">

@@ -1,0 +1,112 @@
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-image: url(../../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+
+    padding: 1rem;
+    margin: 1.2rem;
+
+    cursor: pointer;
+}
+
+.list-img {
+    flex: 2;
+    padding-right: 1rem;
+}
+
+.img-role {
+    border-radius: 5rem;
+    width: 100%;
+}
+
+.list-info {
+    flex: 2;
+    padding-right: 1rem;
+}
+
+.list-name {
+    text-align: center;
+}
+
+.list-role {
+    text-align: center;
+}
+
+
+/* ===== MEDIA QUERIES (DESKTOP) ===== */
+
+@media screen and (min-width: 1024px) and (max-width: 1200px) {
+    .list-item {
+        width: 60%;
+    }
+}
+
+/* ===== MEDIA QUERIES (LAPTOP) ===== */
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {
+    .list-item {
+        width: 75%;
+    }
+}
+
+/* ===== MEDIA QUERIES (TABLET) ===== */
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .list-item {
+        width: 80%;
+    }
+
+    .list-img {
+        padding-right: 0.6rem;
+    }
+
+    .list-info {
+        padding-right: 0.6rem;
+    }
+}
+
+// HIDDEN BUTTON DELETE LAPTOP
+@media screen and (min-width: 600px) {
+    .mobile {
+        display: none;
+    }
+}
+
+// HIDDEN BUTTON DELETE MOBILE
+@media screen and (max-width: 600px) {
+    .laptop {
+        display: none;
+    }
+}
+
+/* ===== MEDIA QUERIES (MOBILE) ===== */
+  
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .list-item {
+        width: 92%;
+    }
+
+    .list-img {
+        padding-right: 0.6rem;
+    }
+
+    .list-info {
+        padding-right: 0.6rem;
+    }
+    
+    p {
+        font-size: 0.8rem;
+    }
+}

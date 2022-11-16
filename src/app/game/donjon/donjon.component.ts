@@ -159,16 +159,15 @@ export class DonjonComponent implements OnInit {
   sendPoints() {
     // Score à atteindre
     console.log('La manche est en '+this.scoreToReach+' points gagnant !');
-    // this.pvPlayer = 5;
     
     // Level 1
     if(this.scorePlayer === this.scoreToReach && this.scoreToReach == 3) {
       this.sentPoints = true;
-      // this.donjonService.donjonLevelOneW().subscribe();
+      this.donjonService.donjonLevelOneW().subscribe();
+      this.donjonService.winGame().subscribe();
       // Verification envoie des points
       console.log('Envoie de 3 points');
       this.gameBoard = false;
-      // this.show=false; MARCHE AUSSI
       this.displayEndGame();
       this.winLoos=`GAGNE !! Félicitation vous avez vaincu le ${this.opponent} ! Vous avez gagné ${this.scoreToReach} points`
       this.winOrLoos=this.winLoos;
@@ -177,7 +176,8 @@ export class DonjonComponent implements OnInit {
     // Level 2
     if(this.scorePlayer === this.scoreToReach && this.scoreToReach == 5) {
       this.sentPoints = true;
-      // this.donjonService.donjonLevelTwoW().subscribe();
+      this.donjonService.donjonLevelTwoW().subscribe();
+      this.donjonService.winGame().subscribe();
       // Verification envoie des points
       console.log('Envoie de 5 points');
       this.gameBoard = false;
@@ -189,12 +189,12 @@ export class DonjonComponent implements OnInit {
     // Level 3
     if(this.scorePlayer === this.scoreToReach && this.scoreToReach == 7) {
       this.sentPoints = true;
-      // this.donjonService.donjonLevelThreeW().subscribe();
+      this.donjonService.donjonLevelThreeW().subscribe();
+      this.donjonService.winGame().subscribe();
       // Verification envoie des points
       console.log('Envoie de 7 points');
       this.gameBoard = false;
       this.displayEndGame();
-      // this.winLoos="GAGNE !! Félicitation vous avez vaincu le Roi Fourmi ! Vous avez gagné 7 points."
       this.winLoos=`GAGNE !! Félicitation vous avez vaincu le ${this.opponent} ! Vous avez gagné ${this.scoreToReach} points`
       this.winOrLoos=this.winLoos;
     }
@@ -202,13 +202,13 @@ export class DonjonComponent implements OnInit {
     // Level 1
     if(this.pvPlayer1 === this.scoreIa && this.pvPlayer1 === 5) {
       this.sentPoints = true;
-      // this.donjonService.donjonLevelOneL().subscribe();
+      this.donjonService.donjonLevelOneL().subscribe();
+      this.donjonService.looseGame().subscribe();
       // Verification envoie des points
       console.log('Soustraction de 3 points');
       this.gameBoard = false;
       // this.show=false; MARCHE AUSSI
       this.displayEndGame();
-      // this.winLoos="PERDU... Vous ferez mieux la prochaine fois... Vous avez perdu 3 points."
       this.winLoos=`PERDU... Vous ferez mieux la prochaine fois... Vous avez perdu ${this.scoreToReach} points.`
       this.winOrLoos=this.winLoos;
     }
@@ -216,7 +216,8 @@ export class DonjonComponent implements OnInit {
     // Level 2
     if(this.pvPlayer2 === this.scoreIa && this.pvPlayer2 === 5) {
       this.sentPoints = true;
-      // this.donjonService.donjonLevelTwoL().subscribe();
+      this.donjonService.donjonLevelTwoL().subscribe();
+      this.donjonService.looseGame().subscribe();
       // Verification envoie des points
       console.log('Soustraction de 5 points');
       this.gameBoard = false;
@@ -228,7 +229,8 @@ export class DonjonComponent implements OnInit {
     // Level 3
     if(this.pvPlayer3 === this.scoreIa && this.pvPlayer3 === 5) {
       this.sentPoints = true;
-      // this.donjonService.donjonLevelThreeL().subscribe();
+      this.donjonService.donjonLevelThreeL().subscribe();
+      this.donjonService.looseGame().subscribe();
       // Verification envoie des points
       console.log('Soustraction de 7 points');
       this.gameBoard = false;
@@ -248,7 +250,7 @@ export class DonjonComponent implements OnInit {
   this.iaPlayer = this.iaChoice[this.iaPossibility];
   this.playingCondition();
   this.sendPoints();
-  },1250)
+  },1000)
   console.log('Lance');
 }
 
@@ -261,7 +263,7 @@ paperCase() {
   this.iaPlayer = this.iaChoice[this.iaPossibility];
   this.playingCondition();
   this.sendPoints();
-  },1250)
+  },1000)
   console.log('Arc');
 }
 
@@ -274,7 +276,7 @@ paperCase() {
   this.iaPlayer = this.iaChoice[this.iaPossibility];
   this.playingCondition();
   this.sendPoints();
-  },1250)
+  },1000)
   console.log('Bouclier');
 }
 

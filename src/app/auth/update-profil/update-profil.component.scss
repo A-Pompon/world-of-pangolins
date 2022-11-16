@@ -1,0 +1,68 @@
+.update-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+    padding: 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    max-width: 80%;
+}
+
+input {
+    background-color: var(--color-1);
+    border-color: var(--border-button-2);
+}
+
+.radio-update {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.radio {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.radio-label {
+    padding-left: 0.4rem;
+}
+
+input[type=radio] {
+    content: '';
+    border-radius: 50%;
+    display: inline-block;
+    width: 0.8rem;
+    height: 0.8rem;
+}
+
+input[type=radio]:checked {
+    accent-color: var(--color-1);
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.first-button {
+    padding-bottom: 1rem;
+}

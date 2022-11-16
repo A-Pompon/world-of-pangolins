@@ -1,0 +1,20 @@
+<div class="list">
+    <div *ngFor='let friend of friendsList' class="list-item" commonBorderCard='var(--color-1)'>
+        <!-- Laissez la directive ?? -->
+        <div class="list-img" >
+            <img class="img-role" [src]="getImage(friend)" alt="Image rôle">
+        </div>
+        <div class="list-info">
+            <p class="list-name">
+                Nom : {{ friend.name == null ? "BUGGY" : friend.name}}
+            </p>
+            <p class="list-role">
+                Rôle : {{ friend.role == null ? "BUGGY" : friend.role | uppercase}}
+            </p>
+        </div>
+        <div class="detail-action">
+            <button (click)="deleteToFriend(friend._id)" class="btn secondary laptop">Supprimer des amis</button>
+            <button (click)="deleteToFriend(friend._id)" class="btn secondary mobile"><span nz-icon nzType="delete" nzTheme="outline"></span></button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+.login-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url(../../../assets/textures/wood.png);
+    background-color: var(--background-wood-1);
+    padding: 1rem;
+}
+
+.hello-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-group {
+    max-width: 80%;
+}
+
+input {
+    background-color: var(--color-1);
+    border-color: var(--border-button-2);
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-button {
+    padding-bottom: 1rem;
+}
+
+a {
+    color: var(--color-1);
+    transition: var(--transition-in);
+    font-size: 0.5rem;
+}
+  
+a:hover {
+    color: var(--white);
+    text-decoration: underline var(--white);
+}
+
+a:active {
+    color: var(--link-active);
+    text-decoration: underline var(--link-active);
+    transition: none;
+}

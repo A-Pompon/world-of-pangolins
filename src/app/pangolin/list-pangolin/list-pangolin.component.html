@@ -1,19 +1,19 @@
 <div class="list">
-    <div *ngFor='let pangolin of pangolinList' class="list-item" (click)="goToPangolin(pangolin)" commonBorderCard='var(--color-1)'>
+    <div *ngFor='let pangolin of pangolinClassement$|async' class="list-item" (click)="goToPangolin(pangolin)" commonBorderCard='var(--color-1)'>
         <div class="list-img" >
-            <img class="img-role" [src]="'../../../assets/roles/'+pangolin.role+'.png'" alt="Image rôle">
+            <img class="img-role" [src]="getImage(pangolin)" alt="Image rôle">
         </div>
         <div class="list-info">
             <p class="list-name">
-                Nom : {{ pangolin.name }}
+                Nom : {{ pangolin.pangolin_id == null ? "BUGGY" : pangolin.pangolin_id.name}}
             </p>
             <p class="list-role">
-                Rôle : {{ pangolin.role | uppercase}}
+                Rôle : {{ pangolin.pangolin_id == null ? "BUGGY" : pangolin.pangolin_id.role | uppercase}}
             </p>
         </div>
         <div class="list-score">
             <p class="score">
-                Score : {{ pangolin.score }}
+                Score : {{ pangolin.points }}
             </p>
         </div>
     </div>

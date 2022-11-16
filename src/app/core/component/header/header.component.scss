@@ -33,3 +33,108 @@
     color: var(--color-1);
     text-decoration: underline var(--color-1);
 }
+
+// MOBILE
+.container-nav-mobile {
+    background: rgba(0, 0, 0, 0.3);
+    width: max-content;
+    padding: 0.7rem 1.7rem;
+    z-index: 2;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0.2rem;
+    display: flex;
+    gap: 0.8rem;
+    border-radius: 3rem;
+    backdrop-filter: blur(15px);
+  }
+  
+  .container-nav-mobile a {
+    background: transparent;
+    padding: 0.9rem;
+    border-radius: 50%;
+    display: flex;
+    color: var(--color-1);
+    font-size: 1.1rem;
+  }
+  
+  .container-nav-mobile a:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .container-nav-mobile a.active-mobile {
+    background: var(--background-button-2);
+    color: var(--color-button-2);
+  }
+
+  /* ===== MEDIA QUERIES ===== */
+  
+@media screen and (min-width: 600px) {
+    .container-nav-mobile {
+        display: none;
+    }
+}
+
+/* ===== MEDIA QUERIES (SMALL DEVICES) ===== */
+
+@media screen and (max-width: 600px) {
+    .container-nav {
+        display: none;
+    }
+
+    .container-logo {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .header-logo {
+        width: 85px;
+    }
+
+    .container-nav-mobile {
+      width: max-content;
+      margin-bottom: 0.9rem;
+    }
+  
+    .container-nav-mobile a {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+  
+  @media screen and (max-width: 415px) {
+    .container-nav-mobile {
+      gap: 0.3rem;
+      margin-bottom: 0.7rem;
+    }
+  
+    .container-nav-mobile a {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+  
+  @media screen and (max-width: 350px) {
+    .container-nav-mobile {
+      margin-bottom: 0.5rem;
+    }
+  
+    .container-nav-mobile a {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* ===== MEDIA QUERIES (VERY SMALL DEVICES) ===== */
+  
+  @media screen and (max-width: 300px) {
+    .container-nav-mobile {
+      margin-bottom: 0rem;
+    }
+  
+    .container-nav-mobile a {
+      font-size: 0.6rem;
+    }
+  }

@@ -1,25 +1,48 @@
-import { Injectable } from '@angular/core';
-import { PANGOLINS } from './mock-pangolin-list';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { find } from 'rxjs/operators';
+// import { PANGOLINS } from './mock-pangolin-list';
 import { Pangolin } from './pangolin';
+import { Score } from './score';
+import { AuthService } from '../auth/auth.service';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Authorization': localStorage.getItem("Token")! }),
+};
 
 @Injectable(
-//   {
-//   providedIn: 'root'
-// }
+  {
+  providedIn: 'root'
+}
 )
 export class PangolinService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) {}
 
-  getPangolinList():Pangolin[] {
-    return PANGOLINS;
+  getFriends(): Observable<Pangolin> {
+    return this.http.get<Pangolin>('http://localhost:3000/api/friend', httpOptions);
   }
 
-  getPangolinById(pangolinId:number): Pangolin | undefined {
-    return PANGOLINS.find(pangolin => pangolin.id == pangolinId);
+  getProfil(): Observable<Score> {
+    return this.http.get<Score>('http://localhost:3000/api/score/profil', httpOptions);
   }
 
-  login():Pangolin | undefined {
-    return PANGOLINS[0];
+  rankingGame(): Observable<Score[]> {
+    return this.http.get<Score[]>('http://localhost:3000/api/score', httpOptions)
+  }
+
+  getPangolinById(pangolinId: string): Observable<Score> {
+    return this.http.get<Score>(`http://localhost:3000/api/score/${pangolinId}`, httpOptions);
+  }
+
+  addToFriend(pangolinId: string): Observable<Score> {
+    return this.http.get<Score>(`http://localhost:3000/api/friend/add/${pangolinId}`, httpOptions);
+  }
+
+  deleteToFriend(pangolinId: string): Observable<Score> {
+    return this.http.get<Score>(`http://localhost:3000/api/friend/delete/${pangolinId}`, httpOptions);
   }
 }

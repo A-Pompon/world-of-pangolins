@@ -3,6 +3,9 @@ import { Router } from '@angular/router';
 import { PangolinService } from '../pangolin.service';
 
 import { Pangolin } from '../pangolin';
+import { Score } from '../score';
+import { map, find } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-list-pangolin',
@@ -11,8 +14,9 @@ import { Pangolin } from '../pangolin';
 })
 export class ListPangolinComponent implements OnInit {
 
-  pangolinList!: Pangolin[];
   pangolinImage!:string;
+
+  pangolinClassement$!:Observable<any>;
 
   constructor(
     private router: Router,
@@ -21,14 +25,15 @@ export class ListPangolinComponent implements OnInit {
 
   
   ngOnInit(): void {
-    this.pangolinList = this.pangolinService.getPangolinList();
-    this.pangolinList.sort((a, b):number => {
-      return b.score - a.score;
-    })
-
-    }
-
-  goToPangolin(pangolin: Pangolin) {
-    this.router.navigate(['/pangolin', pangolin.id]);
+    this.pangolinClassement$ = this.pangolinService.rankingGame();
   }
+
+  getImage(score: Score): string {
+    let path:string =  score.pangolin_id == null ? "sorcier.png" : score.pangolin_id.role.toLowerCase()+".png"
+    return "../../../assets/roles/"+ path;
+  }
+
+  goToPangolin(score: Score) {
+    this.router.navigate(['/pangolin', score._id]);
+  } 
 }

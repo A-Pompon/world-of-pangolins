@@ -9,12 +9,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HeaderComponent } from './component/header/header.component';
 
-import { ScrollToTopDirective } from '../common-directives/directives/scroll-to-top.directive';
-
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { AuthGuard } from './guards/auth-guard';
 
 const coreRoutes: Routes = [
-  { path: 'accueil', component: AccueilComponent},
+  { path: 'accueil', component: AccueilComponent , canActivate: [AuthGuard]},
   
 ];
 

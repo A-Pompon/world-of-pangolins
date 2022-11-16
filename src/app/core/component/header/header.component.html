@@ -10,8 +10,17 @@
               <li><a routerLink="/accueil" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Accueil</a></li>
               <li><a routerLink="/donjon" routerLinkActive="active">Donjon</a></li>
               <li><a routerLink="/classement" routerLinkActive="active">Classement</a></li>
+              <li><a routerLink="/friends" routerLinkActive="active">Amis</a></li>
               <li><a routerLink="/profil" routerLinkActive="active">Profil</a></li>
             </ul>
+        </nav>
+
+        <nav class="container-nav-mobile">
+              <li><a routerLink="/accueil" routerLinkActive="active-mobile" [routerLinkActiveOptions]="{exact: true}"><span nz-icon nzType="home" nzTheme="outline"></span></a></li>
+              <li><a routerLink="/donjon" routerLinkActive="active-mobile"><span nz-icon nzType="fire" nzTheme="outline"></span></a></li>
+              <li><a routerLink="/classement" routerLinkActive="active-mobile"><span nz-icon nzType="ordered-list" nzTheme="outline"></span></a></li>
+              <li><a routerLink="/friends" routerLinkActive="active-mobile"><span nz-icon nzType="team" nzTheme="outline"></span></a></li>
+              <li><a routerLink="/profil" routerLinkActive="active-mobile"><span nz-icon nzType="user" nzTheme="outline"></span></a></li>
         </nav>
     </div>
 </header>

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { DonjonService } from '../donjon.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { DonjonService } from '../donjon.service';
   templateUrl: './end-donjon.component.html',
   styleUrls: ['./end-donjon.component.scss']
 })
-export class EndDonjonComponent implements OnInit {
+export class EndDonjonComponent implements OnInit, OnDestroy {
 
   @Output() sendResetToData = new EventEmitter();
 
@@ -25,6 +25,10 @@ export class EndDonjonComponent implements OnInit {
   // endPage:boolean=false;
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.resetAll()
   }
 
   resetAll(){
