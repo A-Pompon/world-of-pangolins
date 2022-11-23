@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PangolinService } from '../pangolin.service';
 
-import { Pangolin } from '../pangolin';
 import { Score } from '../score';
-import { map, find } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
 @Component({

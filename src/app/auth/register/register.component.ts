@@ -72,7 +72,7 @@ export class RegisterComponent implements OnInit {
         console.log(data);
         console.log('====================================');
         this.authService.setToken('Token', data.accessToken);
-        this.authService.getProfil().subscribe({
+        this.authService.getProfilRegister().subscribe({
           next: data => {
             this.authService.setToken('ProfilId', data._id)
           },
@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
           }
         })
         this.isSuccessful = true;
-        this.isSignUpFailed = false;
+        this.isSignUpFailed = false;  
         this.router.navigateByUrl('/');
       },
       error: err => {
@@ -96,9 +96,9 @@ export class RegisterComponent implements OnInit {
   }
 
   // Si intégration button reset
-  onReset(): void {
-    this.submitted = false;
-    this.form.reset();
-  }
+  // onReset(): void {
+  //   this.submitted = false;
+  //   this.form.reset();
+  // }
 
 }

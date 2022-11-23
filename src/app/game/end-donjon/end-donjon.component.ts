@@ -22,8 +22,6 @@ export class EndDonjonComponent implements OnInit, OnDestroy {
 
   show:boolean=false;
 
-  // endPage:boolean=false;
-
   ngOnInit(): void {
   }
 
@@ -38,7 +36,6 @@ export class EndDonjonComponent implements OnInit, OnDestroy {
 
   resetGame() {
     this.sendResetToData.emit();
-    // this.endPage=false;
   }
 
   displayLevel() {

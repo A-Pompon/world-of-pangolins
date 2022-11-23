@@ -2,16 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { getHeaderToken, getHeader } from '../auth/utils/localStorageGestion'
 
 const AUTH_API = 'http://localhost:3000/api/auth/';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
-const httpOptionsUpdate = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' , 'Authorization': localStorage.getItem("Token")! }),
-};
 
 @Injectable(
 )
@@ -28,7 +21,7 @@ export class AuthService {
     return this.http.post(AUTH_API + 'login', {
       email,
       password
-    }, httpOptions);
+    }, getHeader());
   }
 
   register(name: string, email: string, password: string, role: string): Observable<any> {
@@ -40,17 +33,21 @@ export class AuthService {
       email,
       password,
       role
-    }, httpOptions);
+    }, getHeader());
   }
 
   logout() {
     this.removeToken('Token');
-    this.removeToken('Token');
+    this.removeToken('ProfilId');
     this.router.navigateByUrl('/login');
   }
 
   getProfil(): Observable<any> {
-    return this.http.get('http://localhost:3000/api/pangolin/me', httpOptions);
+    return this.http.get('http://localhost:3000/api/pangolin/me', getHeaderToken());
+  }
+
+  getProfilRegister(): Observable<any> {
+    return this.http.get('http://localhost:3000/api/pangolin/me', getHeaderToken());
   }
 
   // Profil
@@ -58,7 +55,7 @@ export class AuthService {
     return this.http.patch('http://localhost:3000/api/pangolin/update', {
       name,
       role
-    }, httpOptionsUpdate);
+    }, getHeaderToken());
   }
 
   // Token storage

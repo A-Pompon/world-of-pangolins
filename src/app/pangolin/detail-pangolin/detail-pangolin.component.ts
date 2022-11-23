@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Pangolin } from '../pangolin';
 import { PangolinService } from '../pangolin.service';
 import { Score } from '../score';
 

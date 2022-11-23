@@ -28,9 +28,6 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-  //   if (this.authService.getToken('Token')) {
-  //     this.isLoggedIn = true;
-  //   }
   this.form = this.formBuilder.group(
     {
       email: ['', [Validators.required, Validators.email]],

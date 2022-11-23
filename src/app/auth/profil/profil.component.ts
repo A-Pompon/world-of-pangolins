@@ -13,9 +13,7 @@ import { AuthService } from '../auth.service';
 })
 export class ProfilComponent implements OnInit {
 
-  // pangolin$:Observable<Score>;
   profil!:Score;
-
 
   constructor(
     private router: Router,
@@ -24,10 +22,8 @@ export class ProfilComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.pangolin = this.pangolinService.login();
-    // this.pangolin$ = this.pangolinService.getProfil()
     this.pangolinService.getProfil().subscribe(data => {
-      console.log('====================================');
+      console.log('=================DATA PROFIL===================');
       console.log(data);
       console.log('====================================');
       this.profil = data;

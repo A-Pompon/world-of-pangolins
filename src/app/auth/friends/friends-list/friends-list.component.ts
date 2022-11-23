@@ -19,7 +19,6 @@ export class FriendsListComponent implements OnInit {
   isFriend = false;
 
   constructor(
-    private router: Router,
     private pangolinService: PangolinService,
   ) { }
 
