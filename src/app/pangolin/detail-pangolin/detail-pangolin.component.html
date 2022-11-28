@@ -22,8 +22,10 @@
             </div>
             <div class="detail-action">
                 <button class="btn primary" (click)="goToPangolinList()">Retour</button>
-                <button *ngIf="!isFriend" (click)="addToFriend()" class="btn secondary">Ajouter aux amis</button>
-                <button *ngIf="isFriend" (click)="deleteToFriend()" class="btn secondary">Supprimer des amis</button>
+                <div *ngIf="pangolin._id !== player._id" class="button-friend">
+                    <button *ngIf="!isFriend" (click)="addToFriend()" class="btn secondary">Ajouter aux amis</button>
+                    <button *ngIf="isFriend" (click)="deleteToFriend()" class="btn secondary">Supprimer des amis</button>
+                </div>
             </div>
         </div>
     </div>

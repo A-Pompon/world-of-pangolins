@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PangolinService } from '../../../pangolin/pangolin.service';
 
 import { Pangolin } from '../../../pangolin/pangolin';
-import { Score } from '../../../pangolin/score';
-import { map, find } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-friends-list',
@@ -25,14 +21,12 @@ export class FriendsListComponent implements OnInit {
   ngOnInit(): void {
     this.pangolinService.getFriends().subscribe(data => {
       this.friendsList = data.friends_id;
-      console.log(data);
   });
   }
 
   deleteToFriend(friendId:string) {
     this.pangolinService.deleteToFriend(friendId).subscribe(
       data => {
-        console.log(data);
         this.friendsList = this.friendsList.filter(el => el._id !== friendId)
       },
       error => {

@@ -16,14 +16,13 @@
                             <p class="profil-name">
                                 Nom : {{ profil.pangolin_id.name }}
                             </p>
-                            <button (click)="goUpdate()" class="btn primary">Modifier</button>
                         </div>
                         <div class="profil-row">
                             <p class="profil-role">
                                 Rôle : {{ profil.pangolin_id.role | uppercase}}
                             </p>
-                            <button (click)="goUpdate()" class="btn primary">Modifier</button>
                         </div>
+                        <button (click)="goUpdate()" class="btn primary">Modifier</button>
                     </div>
                 </div>
                 <div class="profil-score">

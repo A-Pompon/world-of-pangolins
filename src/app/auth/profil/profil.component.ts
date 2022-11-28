@@ -23,9 +23,6 @@ export class ProfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.pangolinService.getProfil().subscribe(data => {
-      console.log('=================DATA PROFIL===================');
-      console.log(data);
-      console.log('====================================');
       this.profil = data;
   });
   }

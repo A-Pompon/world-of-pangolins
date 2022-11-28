@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { PangolinService } from 'src/app/pangolin/pangolin.service';
+import { Score } from 'src/app/pangolin/score';
 import { DonjonService } from '../donjon.service';
 
 @Component({
@@ -47,15 +48,19 @@ export class DonjonComponent implements OnInit {
   
   show:boolean=true;
 
+  profil!:Score;
+
   constructor(
-    private router:Router,
-    private route:ActivatedRoute,
     private donjonService:DonjonService,
     private dataDonjon:DonjonService,
+    private pangolinService: PangolinService,
   ) { }
 
   ngOnInit(): void {
     this.bug = false;
+    this.pangolinService.getProfil().subscribe(data => {
+      this.profil = data;
+  });
   }
 
   ngDoCheck():void {
@@ -66,6 +71,11 @@ export class DonjonComponent implements OnInit {
     if (this.dataDonjon.show) {
       this.imgPlayer ="";
     }
+  }
+
+  getImage(profil: Score): string {
+    let path:string =  profil.pangolin_id == null ? "sorcier.png" : profil.pangolin_id.role.toLowerCase()+".png"
+    return "../../../assets/roles/"+ path;
   }
 
   displayEndGame(){
@@ -103,7 +113,6 @@ export class DonjonComponent implements OnInit {
     this.scorePlayer=0;
     this.scoreIa=0;
     this.activeGame=true;
-    console.log("Les stats sont remises à zéro :D !");
   }
 
 
@@ -250,7 +259,7 @@ export class DonjonComponent implements OnInit {
   this.iaPlayer = this.iaChoice[this.iaPossibility];
   this.playingCondition();
   this.sendPoints();
-  },1000)
+  },500)
   console.log('Lance');
 }
 
@@ -263,7 +272,7 @@ paperCase() {
   this.iaPlayer = this.iaChoice[this.iaPossibility];
   this.playingCondition();
   this.sendPoints();
-  },1000)
+  },500)
   console.log('Arc');
 }
 
@@ -276,7 +285,7 @@ paperCase() {
   this.iaPlayer = this.iaChoice[this.iaPossibility];
   this.playingCondition();
   this.sendPoints();
-  },1000)
+  },500)
   console.log('Bouclier');
 }
 

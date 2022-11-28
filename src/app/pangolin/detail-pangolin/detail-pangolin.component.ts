@@ -12,6 +12,9 @@ import { Score } from '../score';
 export class DetailPangolinComponent implements OnInit {
 
   scoreById$!:Observable<Score>;
+  player$!: Observable<Score>;
+
+  player!: Score;
   pangolin!: Score;
 
   isFriend = false;
@@ -23,11 +26,12 @@ export class DetailPangolinComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.player$ = this.pangolinService.getProfil();
+    this.player$.subscribe(data => {
+      this.player = data;
+  })
     this.scoreById$ = this.pangolinService.getPangolinById(this.route.snapshot.params['id']);
     this.scoreById$.subscribe(data => {
-        console.log('====================================');
-        console.log(data);
-        console.log('====================================');
         this.pangolin = data;
         this.isMyFriend();
     })
@@ -36,7 +40,6 @@ export class DetailPangolinComponent implements OnInit {
   addToFriend() {
     this.pangolinService.addToFriend(this.pangolin.pangolin_id._id).subscribe(
       data => {
-        console.log(data);
         this.isFriend = true;
       },
       error => {
@@ -48,7 +51,6 @@ export class DetailPangolinComponent implements OnInit {
   deleteToFriend() {
     this.pangolinService.deleteToFriend(this.pangolin.pangolin_id._id).subscribe(
       data => {
-        console.log(data);
         this.isFriend = false;
       },
       error => {
@@ -59,7 +61,6 @@ export class DetailPangolinComponent implements OnInit {
   
   isMyFriend():void {
     this.isFriend = this.pangolin.friends.find(el => el._id == this.pangolin.pangolin_id._id) == undefined ? false : true;
-    console.log(this.isFriend);
   }
 
   getImage(score: Score): string {

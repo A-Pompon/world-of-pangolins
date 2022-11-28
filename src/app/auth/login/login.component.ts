@@ -53,15 +53,11 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(email, password).subscribe({
       next: data => {
-        console.log(data);
-        
         this.authService.setToken('Token', data.accessToken);
         this.isLoggedIn = true;
         this.isLoginFailed = false;
         this.pangolinService.getProfil().subscribe({
           next: data => {
-            console.log(data);
-            
             this.authService.setToken('ProfilId', data._id)
           },
           error: err => {
